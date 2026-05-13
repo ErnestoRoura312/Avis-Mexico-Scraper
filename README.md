@@ -38,3 +38,9 @@ Antes de ejecutar el script, asegúrate de tener instalado:
    ```
    python ScrapperTodosLosEstados.py
    ```
+## ⚖️ Aviso Legal y Ético
+
+Este proyecto fue desarrollado exclusivamente con **fines educativos y de análisis de datos**. 
+
+*   **Ética de Scraping**: El script ha sido diseñado para realizar peticiones de forma respetuosa, evitando saturar los servidores del sitio web objetivo.
+*   **Propiedad Intelectual**: Todos los derechos sobre la marca "Avis" y sus datos pertenecen a sus respectivos dueños. Este proyecto no tiene afiliación oficial con la empresa.
