@@ -1,46 +1,45 @@
 # Avis Mexico Scraper
 
-Este es un scraper automatizado desarrollado en **Python** utilizando **Selenium**. Su objetivo es extraer información de precios y disponibilidad de vehículos de la web oficial de Avis México, procesando múltiples estados de la república de forma secuencial.
+This is an automated scraper developed in **Python** using **Selenium**. Its goal is to extract vehicle pricing and availability data from the official Avis Mexico website, processing multiple states across the country sequentially.
 
-## 📋 Características
-*   **Automatización Completa**: Navega, busca y extrae precios sin intervención manual.
-*   **Configuración Externa**: Las fechas de renta se gestionan desde un archivo `config.txt` (Notepad).
-*   **Múltiples Formatos**: Genera reportes detallados en formatos **JSON**, **CSV** y **Excel** (.xlsx).
+## 📋 Features
+* **Full Automation**: Navigates, searches, and extracts prices without manual intervention.
+* **External Configuration**: Rental dates are managed through a `config.txt` file (Notepad).
+* **Multiple Formats**: Generates detailed reports in **JSON**, **CSV**, and **Excel** (.xlsx) formats.
 
-## 🛠️ Requisitos
-Antes de ejecutar el script, asegúrate de tener instalado:
-*   [Python 3.10+](https://www.python.org/downloads/)
-*   [Google Chrome](https://www.google.com/chrome/)
-*   Dependencias de Python (ver sección de instalación).
+## 🛠️ Requirements
+Before running the script, ensure you have the following installed:
+* [Python 3.10+](https://www.python.org/downloads/)
+* [Google Chrome](https://www.google.com/chrome/)
+* Python dependencies (see the installation section).
 
-## Instalación y Uso
+## Installation and Usage
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
    ```
    git clone https://github.com/ErnestoRoura312/Avis-Mexico-Scraper.git
+   ```
+2. **Navigate to the project folder:**
+   ```
    cd Avis-Mexico-Scraper
    ```
-2. **Dirigete a la carpeta del proyecto:**
-   ```
-   cd Avis-Mexico-Scraper
-   ```
-3. **Instala las librerías necesarias:**
+3. **Install the required libraries:**
    ```
    pip install -r requirements.txt
    ```
-4. **Configura tus fechas:**
-   Edita el archivo Configuracion/config.txt con el siguiente formato:
+4. **Configure your dates:**
+   Edit the file Configuracion/config.txt using the following format:
    ```
    fechaEntrega: DD/MM/YY
    fechaDevolucion: DD/MM/YY
    ```
-5. **Ejecuta el script:**
+5. **Run the script:**
    ```
    python ScrapperTodosLosEstados.py
    ```
-## ⚖️ Aviso Legal y Ético
+## ⚖️ Legal and Ethical Notice
 
-Este proyecto fue desarrollado exclusivamente con **fines educativos y de análisis de datos**. 
+This project was developed exclusively for **educational and data analysis purposes**. 
 
-*   **Ética de Scraping**: El script ha sido diseñado para realizar peticiones de forma respetuosa, evitando saturar los servidores del sitio web objetivo.
-*   **Propiedad Intelectual**: Todos los derechos sobre la marca "Avis" y sus datos pertenecen a sus respectivos dueños. Este proyecto no tiene afiliación oficial con la empresa.
+*   **Scraping Ethics**: The script is designed to perform requests respectfully, avoiding overloading the target website's servers.
+*   **Intellectual Property**: All rights to the "Avis" brand and its data belong to their respective owners. This project has no official affiliation with the company.
