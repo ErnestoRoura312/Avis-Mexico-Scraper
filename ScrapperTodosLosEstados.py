@@ -23,7 +23,7 @@ def pausa():
 def leerConfiguracion(rutaArchivo):
     config = {}
     if not os.path.exists(rutaArchivo):
-        sys.exit(f"ERROR - No se encontró el archivo de configuracion")
+        sys.exit("ERROR - No se encontró el archivo de configuracion")
     
     with open(rutaArchivo, "r") as f:
         for linea in f:
@@ -61,7 +61,7 @@ try:
     fDevolucion = datetime.strptime(fechaDevolucionStr, "%d/%m/%y")
     
     if fEntrega.date() < hoy.date():
-        sys.exit(f"ERROR - Fecha invalida: La fecha de entrega ya paso.")
+        sys.exit("ERROR - Fecha invalida: La fecha de entrega ya paso.")
 
     if fEntrega > fechaLimite or fDevolucion > fechaLimite:
         sys.exit("ERROR - Fecha invalida: Las fechas no pueden ser mayores a un año desde hoy.")
@@ -86,7 +86,7 @@ try:
             horaDevolucion = fDevolucion.replace(hour=16, minute=0)
         
         if horaEntrega > horaLimite:
-            sys.exit(f"ERROR - No hay tiempo suficiente para generar la renta antes de las 11:30 PM.")
+            sys.exit("ERROR - No hay tiempo suficiente para generar la renta antes de las 11:30 PM.")
             
     else:
         horaEntrega = fEntrega.replace(hour=12, minute=0)
@@ -118,8 +118,8 @@ for estado in arregloEstados:
 
         fechaDevolucion = driver.find_element(By.ID, 'Fdev')
         fechaDevolucion.clear()
-        fechaEntrega.send_keys(Keys.CONTROL + "a")
-        fechaEntrega.send_keys(Keys.BACKSPACE)
+        fechaDevolucion.send_keys(Keys.CONTROL + "a")
+        fechaDevolucion.send_keys(Keys.BACKSPACE)
 
         horaEntrega = driver.find_element(By.ID, 'Hrenta')
         horaEntrega.clear()
@@ -218,12 +218,11 @@ for estado in arregloEstados:
                 driver.execute_script("window.scrollBy(0, -100);")
                 pausa()
 
-    except:
-
+    except Exception as e:
         datosSucursal = {
             "Estado": estado,
             "Sucursal": "No hay sucursal",
-            "Listado_Precios": "No hay precios"
+            "Listado_Precios": f"Error: {e}",
         }
                     
         precios.append(datosSucursal)
@@ -277,8 +276,8 @@ for entry in precios:
 
 df = pd.DataFrame(rows)
 
-rutaCSV = os.path.join(rutaGuardado, f"precios.csv")
-rutaExcel = os.path.join(rutaGuardado, f"precios.xlsx")
+rutaCSV = os.path.join(rutaGuardado, "precios.csv")
+rutaExcel = os.path.join(rutaGuardado, "precios.xlsx")
 
 df.to_csv(rutaCSV, index=False, encoding='utf-8-sig')
 
